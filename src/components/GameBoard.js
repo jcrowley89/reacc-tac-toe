@@ -24,9 +24,9 @@ const GameBoard = () => {
 
   function boardIsFull(gameState) {
     for (let i = 0; i < gameState.length; i++) {
-      if (!gameState[i] === "") return true;
+      if (gameState[i] === "") return false;
     }
-    return false;
+  return true;
   }
 
   function handleClick(i) {
