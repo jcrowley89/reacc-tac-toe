@@ -15,8 +15,16 @@ const GameBoard = () => {
       let a = gameState[winCombo[0]];
       let b = gameState[winCombo[1]];
       let c = gameState[winCombo[2]];
-      if (a === currentPlayer && b === currentPlayer && c === currentPlayer)
+      if (a === currentPlayer && b === currentPlayer && c === currentPlayer) {
         return true;
+      }
+    }
+    return false;
+  }
+
+  function boardIsFull(gameState) {
+    for (let i = 0; i < gameState.length; i++) {
+      if (!gameState[i] === "") return true;
     }
     return false;
   }
@@ -27,6 +35,10 @@ const GameBoard = () => {
     newArray[i] = currentPlayer;
     setGameState(newArray);
     if (!playerWon(newArray, currentPlayerX)) {
+      if (boardIsFull(newArray)) {
+        setMessage("It's a draw...");
+        return;
+      }
       setMessage(`${!currentPlayerX ? "X" : "O"}'s turn...`);
       setCurrentPlayerX(!currentPlayerX);
       return;
