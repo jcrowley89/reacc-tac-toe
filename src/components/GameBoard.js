@@ -53,10 +53,12 @@ const GameBoard = () => {
   }
 
   return (
-    <div id="gameBoard">
-      {getSquares()}
+    <>
+      <div id="gameBoard">
+        {getSquares()}
+      </div>
       <h2 className="message">{message}</h2>
-    </div>
+    </>
   )
 };
 

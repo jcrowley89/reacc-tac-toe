@@ -130,5 +130,6 @@ button:hover {
 }
 
 .message {
+  width: 100%;
   padding: 1rem;
 }
